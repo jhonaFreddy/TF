@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* main{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+    color: black;
+}
+
+h1{
+    
+}
+
+input:hover{
+    border: solid hsl(61, 70%, 52%) 1px !important ;
+}
+span{
+    background-color: hsl(202, 86%, 94%) !important;
+}
+input > span:hover{
+    background-color: hsl(61, 70%, 52%) !important;
+}
+input{
+    background-color:hsl(202, 86%, 94%)
+} */
+/* .form-control{
+    box-shadow: none !important;
+}
+.sub{
+    background-color: hsl(61, 70%, 52%);
+}
+.rep{
+    border: solid 1px black;
+} */
+ main{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+ }
+.titulo{
+    font-weight: 800;
+}
+.clear{
+    color: hsl(200, 26%, 54%) ;
+}
+.selector:focus {
+    box-shadow: none !important;
+    border-color: hsl(61, 70%, 52%) !important;
+}
+
+.input-group:focus-within .logo {
+    background-color: hsl(61, 70%, 52%) !important;
+}
+label{
+    color: hsl(200, 26%, 54%);
+}
+/* 
+.am{
+    background-color: black;
+} */
