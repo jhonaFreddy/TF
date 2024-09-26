@@ -4,60 +4,205 @@
     padding: 0;
     
 }
-
-/* main{
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 500;
-    color: black;
-}
-
-h1{
-    
-}
-
-input:hover{
-    border: solid hsl(61, 70%, 52%) 1px !important ;
-}
-span{
-    background-color: hsl(202, 86%, 94%) !important;
-}
-input > span:hover{
-    background-color: hsl(61, 70%, 52%) !important;
-}
-input{
-    background-color:hsl(202, 86%, 94%)
-} */
-/* .form-control{
-    box-shadow: none !important;
-}
-.sub{
-    background-color: hsl(61, 70%, 52%);
-}
-.rep{
-    border: solid 1px black;
-} */
  main{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
+    font-size: 15px;
+    overflow-x: hidden;
  }
 .titulo{
-    font-weight: 800;
+    font-size: 16px;
+    font-weight: 700;
+    color: hsl(202, 55%, 16%)
 }
 .clear{
     color: hsl(200, 26%, 54%) ;
+    font-size: 13px;
+}
+
+.form-label{
+    font-size: 13px;
+    font-weight: 200;
+    color: hsl(200, 26%, 54%);
+}
+.opcion{
+    border: solid #e6e9ec 2px;
+    height: 40px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+.opcion:hover{
+        border: solid hsl(61, 70%, 52%) 1px !important;
 }
 .selector:focus {
     box-shadow: none !important;
     border-color: hsl(61, 70%, 52%) !important;
 }
+.boton > button{
+    background-color:hsl(61, 70%, 52%) ;
+    border-radius: 20px;
+    font-size: 15px;
+    color: hsl(202, 55%, 16%);
+}
+.boton>button:hover{
+    background-color: #d6d87d;
+}
 
+
+.input-group{
+    cursor: pointer;
+    border-color: hsl(61, 70%, 52%) !important;
+
+}
 .input-group:focus-within .logo {
     background-color: hsl(61, 70%, 52%) !important;
 }
-label{
-    color: hsl(200, 26%, 54%);
+.prueba{
+    accent-color: hsl(61, 70%, 52%) !important ;
 }
-/* 
-.am{
-    background-color: black;
-} */
+#radio1{
+    accent-color: black;
+}
+.opciones{
+    color: hsl(202, 55%, 16%);
+    padding-left: 15px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.logo{
+    color: hsl(200, 24%, 40%) !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    background-color: hsl(202, 86%, 94%) !important;
+}
+.aviso{
+    color: hsl(4, 69%, 50%);
+}
+.hidden{
+    display: none;
+}
+.imagen{
+    background-color: #133040;
+}
+
+.titulo_imagen{
+    color: hsl(202, 86%, 94%);
+    font-size: 20px;
+    font-weight: 700;
+}
+.parrafo{
+    color: hsl(200, 26%, 54%);
+    font-weight: 700;
+    text-align: center;
+}
+.modal{
+    height: 200px;
+    width: 100%;
+}
+.parrafo_modal{
+    color: hsl(200, 26%, 54%);
+    font-weight: 700;
+}
+.resultado{
+    background-color: #0e2431 ;
+    height: 200px;
+    border-radius: 16px;
+    border-top: 4px solid hsl(61, 70%, 52%) ;
+}
+
+.custom-radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    padding: 0%;
+  }
+
+  .custom-radio {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .custom-radio input[type="radio"] + label::before {
+    content: "";
+    position: absolute;
+    margin: 10px;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid hsl(203, 41%, 72%); 
+    border-radius: 50%;
+    background-color: white; 
+  }
+
+  .custom-radio input[type="radio"]:checked + label::before {
+    background-color: white;
+    border-color: hsl(61, 70%, 52%);
+  }
+
+  .custom-radio input[type="radio"]:checked + label::after {
+    content: "";
+    position: absolute;
+    margin: 10px;
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background-color: hsl(61, 70%, 52%);
+    border-radius: 50%;
+  }
+  
+  .linea {
+    width: 100%; 
+    height: 0.5%;
+    background-color: hsl(200, 26%, 54%); 
+  }
+.monthly{
+    color: hsl(61, 70%, 52%) ;
+    font-size: 2.5rem;
+}
+.total{
+    color: hsl(202, 86%, 94%);
+    font-size: 1.5rem;
+}
+
+@media(min-width: 576px){
+    .monthly{
+        font-size: 2rem;
+    }
+    .titulo{
+        font-size: 25px;
+    }
+    .boton>button{
+        width: 75% !important;
+    }   
+    .resultado{
+        height: 250px;
+    }
+    
+}
+@media(min-width:768px){
+    .monthly{
+        font-size: 3rem;
+    }
+    .total{
+        font-size: 2rem;
+    }
+}
+@media(min-width:992px){
+    .resultado{
+        height: 300px;
+    }
+    .monthly{
+        font-size: 3.5rem;
+    }
+    .total{
+        font-size: 2.5rem;
+    }
+}
