@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
+    <script defer src="./js/main.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Calculator main</title>
 
 </head>
 <body class="vw-100">
@@ -26,10 +27,9 @@
                 <label for="amount" class="form-label">Mortgage Amount</label>
                 <div class="col-6 input-group">
                     <span class="input-group-text logo"><strong>$</strong></span>
-                <input type="text" name="amount" class="form-control selector" id="amount">
-                
-            </div>
-            <span class="aviso hidden">This filed is required</span>
+                    <input type="text" name="amount" class="form-control selector" id="amount">
+                </div>
+                <span class="aviso hidden">This filed is required</span>
             </div>
             <div class="col-sm-12 d-sm-flex justify-content-sm-between gap-sm-2">
                 <div class="col-sm-6">
@@ -39,8 +39,9 @@
                             <input type="text" name="term" class="form-control selector" id="term">
                             <span class="input-group-text logo"> <strong>years</strong></span>
                         </div>
+                        <span class="aviso hidden">This filed is required</span>
                     </div>
-                    <span class="aviso hidden">This filed is required</span>
+                    
                 </div>
                 <div class="col-sm-6">
                     <div>
@@ -49,40 +50,41 @@
                             <input type="text" name="interest" class="form-control selector" id="interest">
                             <span class="input-group-text logo"><strong>%</strong></span>
                         </div>
+                        <span class="aviso hidden">This filed is required</span>
                     </div>
-                    <span class="aviso hidden">This filed is required</span>
+                    
                 </div>
                 
             </div>
             
             <div >
-                <label for="" class="form-label">Mortgage type</label>
+                <label form="radio1" class="form-label">Mortgage type</label>
                     <div class="custom-radio form-check opcion w-100 ">
-                        <input type="radio" id="option1" name="radio" value="1">
-                        <label for="option1" class="opciones"> <strong>Repayment</strong></label>
+                        <input type="radio" id="radio1" name="radio" value="1">
+                        <label for="radio1" class="opciones"> <strong>Repayment</strong></label>
                      </div>
                     
                      <div class="custom-radio form-check opcion w-100 ">
-                        <input type="radio" id="option2" name="radio" value="2">
-                        <label for="option2" class="opciones"><strong>Interest Only</strong></label>
+                        <input type="radio" id="radio2" name="radio" value="2">
+                        <label for="radio2" class="opciones"><strong>Interest Only</strong></label>
                       </div>
-                      <span class="aviso hidden">This filed is required</span>
+                      <span class="aviso-radio aviso hidden">This filed is required</span>
             </div>
             <div class="boton">
-                <button type="submit" class="p-3 w-100 border-0">
+                <button type="submit" id="submit" class="p-3 w-100 border-0">
                     <img src="./images/icon-calculator.svg" class="calculadora" alt="">
                     <strong>Calculate Repayments</strong>
                 </button>
             </div>
             
         </form>
-        <div class="d-none imagen d-flex flex-column p-4 align-items-center justify-content-center p-sm-5 mt-sm-5">
+        <div class=" imagen d-flex flex-column p-4 align-items-center justify-content-center p-sm-5 " id="imagen">
             <img src="./images/illustration-empty.svg" alt="">
             <p class="titulo_imagen">Results shown here</p>
             <p class="parrafo">Complete the form and click “calculate repayments” to see what 
                 your monthly repayments would be.</p>
         </div>
-        <div class=" imagen p-4 p-sm-5 ">
+        <div class="d-none imagen p-4 p-sm-5 " id="imagen_modal">
             <p class="titulo_imagen">Your results</p>
             <p class="parrafo_modal ">Your results are shown below based on the information you provided. 
                 To adjust the results, edit the form and click “calculate repayments” again.</p>
@@ -90,7 +92,7 @@
                 <div class="parrafo_modal h-50 p-lg-4">
                     Your monthly repayments
                     <div class="monthly">
-                        $ 25,733.4
+                        $ 0
                     </div>
                 </div>
                 
@@ -98,7 +100,7 @@
                 <div class="parrafo_modal p-2 p-sm-2 h-50 p-md-3 p-lg-4">
                     Total you'll repay over the term
                     <div class="total">
-                        $ 25,733.4
+                        $ 0
                     </div>
                 </div>
             </div>        
