@@ -7,7 +7,6 @@ const radios = form.querySelectorAll('input[type="radio"]');
 const imagenBase = document.querySelector('#imagen');
 const imagenModal = document.querySelector('#imagen_modal');
 const clear = document.querySelector('.clear');
-
 const validadorNumero = (e) => {
     let value = e.target.value;
     const hasDecimal = value.includes('.');
@@ -19,6 +18,8 @@ const validadorNumero = (e) => {
 
     e.target.value = value;
 }
+
+
 const ponerComas = (e) => {
     let value = e.target.value.replace(/,/g, '');
     const [integerPart, decimalPart] = value.split('.');
@@ -112,15 +113,15 @@ form.addEventListener('submit', (e) => {
         const monthly = (amount * interestMonthly * Math.pow(1 + interestMonthly, totalMonths))/(Math.pow(1 + interestMonthly, totalMonths)-1);
         if(selectedRadio==='1'){
             const total = (monthly* totalMonths);
-            document.querySelector('.monthly').textContent = `$${monthly.toFixed(2)}`;
-            document.querySelector('.total').textContent = `$${total.toFixed(2)}`;
+            document.querySelector('.monthly').textContent = `$${ponerComasResultado(monthly.toFixed(2))}`;
+            document.querySelector('.total').textContent = `$${ponerComasResultado(total.toFixed(2))}`;
             document.querySelector('.monthly-label').textContent = 'Your monthly repayments';
             document.querySelector('.total-label').textContent = 'Total you\'ll repay over the term';
         } else if (selectedRadio === '2'){
             const monthlyInterest = monthly-(amount/totalMonths)
-            const totalInterest = monthlyInterest * totalMonths; // Intereses totales durante el plazo
-            document.querySelector('.monthly').textContent = `$${monthlyInterest.toFixed(2)}`;
-            document.querySelector('.total').textContent = `$${totalInterest.toFixed(2)}`;
+            const totalInterest = monthlyInterest * totalMonths; 
+            document.querySelector('.monthly').textContent = `$${ponerComasResultado(monthlyInterest.toFixed(2))}`;
+            document.querySelector('.total').textContent = `$${ponerComasResultado(totalInterest.toFixed(2))}`;
             document.querySelector('.monthly-label').textContent = 'Monthly interest payment';
             document.querySelector('.total-label').textContent = 'Total interest paid';
         }
@@ -147,4 +148,7 @@ interestInput.addEventListener('input', (e) => {
 function toggleImages() {
     imagenBase.classList.toggle('d-none');
     imagenModal.classList.toggle('d-none');
+}
+function ponerComasResultado(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
