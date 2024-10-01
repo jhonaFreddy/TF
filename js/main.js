@@ -41,7 +41,6 @@ const verificar = (e) => {
             if (aviso && aviso.classList.contains('aviso')) {
                 aviso.classList.remove('hidden');
                 aviso.style.display = 'block';
-                aviso.textContent = 'This field is required';
             }
             tieneError = true;
         }
@@ -106,12 +105,28 @@ form.addEventListener('submit', (e) => {
         const amount = parseFloat(document.getElementById('amount').value.replace(/,/g, '')) || 0;
         const term = parseInt(document.getElementById('term').value) || 0;
         const interest = parseFloat(document.getElementById('interest').value) || 0;
-        const monthly = (amount / 12) + (amount * (interest / 100));
-        const total = monthly * (term * 12);
-        document.querySelector('.monthly').textContent = `$ ${monthly.toFixed(2)}`;
-        document.querySelector('.total').textContent = `$ ${total.toFixed(2)}`;
+        const interestMonthly = (interest / 12) / 100;
+        const totalMonths = term * 12;
+
+        const selectedRadio = form.querySelector('input[name="radio"]:checked').value;
+        const monthly = (amount * interestMonthly * Math.pow(1 + interestMonthly, totalMonths))/(Math.pow(1 + interestMonthly, totalMonths)-1);
+        if(selectedRadio==='1'){
+            const total = (monthly* totalMonths);
+            document.querySelector('.monthly').textContent = `$${monthly.toFixed(2)}`;
+            document.querySelector('.total').textContent = `$${total.toFixed(2)}`;
+            document.querySelector('.monthly-label').textContent = 'Your monthly repayments';
+            document.querySelector('.total-label').textContent = 'Total you\'ll repay over the term';
+        } else if (selectedRadio === '2'){
+            const monthlyInterest = monthly-(amount/totalMonths)
+            const totalInterest = monthlyInterest * totalMonths; // Intereses totales durante el plazo
+            document.querySelector('.monthly').textContent = `$${monthlyInterest.toFixed(2)}`;
+            document.querySelector('.total').textContent = `$${totalInterest.toFixed(2)}`;
+            document.querySelector('.monthly-label').textContent = 'Monthly interest payment';
+            document.querySelector('.total-label').textContent = 'Total interest paid';
+        }
         document.getElementById('imagen').classList.add('d-none');
         document.getElementById('imagen_modal').classList.remove('d-none');
+
         
     }
 })

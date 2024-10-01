@@ -11,100 +11,103 @@
 
 </head>
 <body class="vw-100">
-    <main class="vh-100 d-sm-flex" >
-        <form action="" class="row p-4 g-3 g-sm-2 col-sm-6 align-items-center align-items-sm-center">
-            <div class="d-flex flex-column flex-sm-row justify-content-between ">
-                <div class="col-12 col-sm-6">
-                    <p class="titulo m-0">                    
-                        Mortgage Calculator 
-                    </p>
+    <main class="vh-100 d-flex align-items-center justify-content-center m-0 p-0" >
+        <div class="d-md-flex contenido ">
+            <form action="" class="row p-4 align-items-center align-items-sm-center bg-white vh-100 ">
+                <div class="d-flex flex-column flex-sm-row justify-content-between ">
+                    <div class="col-12 col-sm-6">
+                        <p class="titulo m-0">                    
+                            Mortgage Calculator 
+                        </p>
+                    </div>
+                    <div>
+                        <input type="reset" name="" class="clear text-decoration-underline border-0 bg-transparent " value="Clear All" id="">
+                    </div>
                 </div>
                 <div>
-                    <input type="reset" name="" class="clear text-decoration-underline border-0 bg-transparent " value="Clear All" id="">
-                </div>
-            </div>
-            <div>
-                <label for="amount" class="form-label">Mortgage Amount</label>
-                <div class="col-6 input-group">
-                    <span class="input-group-text logo"><strong>$</strong></span>
-                    <input type="text" name="amount" class="form-control selector" id="amount">
-                </div>
-                <span class="aviso hidden">This filed is required</span>
-            </div>
-            <div class="col-sm-12 d-sm-flex justify-content-sm-between gap-sm-2">
-                <div class="col-sm-6">
-                    <div >
-                        <label for="term" class="form-label">Mortgage Term</label>
-                        <div class="col-6 col-sm-6 input-group">
-                            <input type="text" name="term" class="form-control selector" id="term">
-                            <span class="input-group-text logo"> <strong>years</strong></span>
-                        </div>
-                        <span class="aviso hidden">This filed is required</span>
+                    <label for="amount" class="form-label">Mortgage Amount</label>
+                    <div class="col-6 input-group">
+                        <span class="input-group-text logo"><strong>$</strong></span>
+                        <input type="text" name="amount" class="form-control selector" id="amount">
                     </div>
-                    
+                    <span class="aviso hidden">This filed is required</span>
                 </div>
-                <div class="col-sm-6">
-                    <div>
-                        <label for="interest" class="form-label">Interest Rate</label>
-                        <div class="col-6 input-group">
-                            <input type="text" name="interest" class="form-control selector" id="interest">
-                            <span class="input-group-text logo"><strong>%</strong></span>
+                <div class="col-sm-12 d-sm-flex justify-content-sm-between gap-sm-2">
+                    <div class="col-sm-6">
+                        <div >
+                            <label for="term" class="form-label">Mortgage Term</label>
+                            <div class="col-6 col-sm-6 input-group">
+                                <input type="text" name="term" class="form-control selector" id="term">
+                                <span class="input-group-text logo"> <strong>years</strong></span>
+                            </div>
+                            <span class="aviso hidden">This filed is required</span>
                         </div>
-                        <span class="aviso hidden">This filed is required</span>
+                        
+                    </div>
+                    <div class="col-sm-6">
+                        <div>
+                            <label for="interest" class="form-label">Interest Rate</label>
+                            <div class="col-6 input-group">
+                                <input type="text" name="interest" class="form-control selector" id="interest">
+                                <span class="input-group-text logo"><strong>%</strong></span>
+                            </div>
+                            <span class="aviso hidden">This filed is required</span>
+                        </div>
+                        
                     </div>
                     
                 </div>
                 
-            </div>
-            
-            <div >
-                <label form="radio1" class="form-label">Mortgage type</label>
-                    <div class="custom-radio form-check opcion w-100 ">
-                        <input type="radio" id="radio1" name="radio" value="1">
-                        <label for="radio1" class="opciones"> <strong>Repayment</strong></label>
-                     </div>
-                    
-                     <div class="custom-radio form-check opcion w-100 ">
-                        <input type="radio" id="radio2" name="radio" value="2">
-                        <label for="radio2" class="opciones"><strong>Interest Only</strong></label>
-                      </div>
-                      <span class="aviso-radio aviso hidden">This filed is required</span>
-            </div>
-            <div class="boton">
-                <button type="submit" id="submit" class="p-3 w-100 border-0">
-                    <img src="./images/icon-calculator.svg" class="calculadora" alt="">
-                    <strong>Calculate Repayments</strong>
-                </button>
-            </div>
-            
-        </form>
-        <div class=" imagen d-flex flex-column p-4 align-items-center justify-content-center p-sm-5 " id="imagen">
-            <img src="./images/illustration-empty.svg" alt="">
-            <p class="titulo_imagen">Results shown here</p>
-            <p class="parrafo">Complete the form and click “calculate repayments” to see what 
-                your monthly repayments would be.</p>
-        </div>
-        <div class="d-none imagen p-4 p-sm-5 " id="imagen_modal">
-            <p class="titulo_imagen">Your results</p>
-            <p class="parrafo_modal ">Your results are shown below based on the information you provided. 
-                To adjust the results, edit the form and click “calculate repayments” again.</p>
-            <div class="resultado p-3 mt-sm-5 p-sm-4">
-                <div class="parrafo_modal h-50 p-lg-4">
-                    Your monthly repayments
-                    <div class="monthly">
-                        $ 0
-                    </div>
+                <div >
+                    <label form="radio1" class="form-label">Mortgage type</label>
+                        <div class="custom-radio form-check opcion w-100 ">
+                            <input type="radio" id="radio1" name="radio" value="1">
+                            <label for="radio1" class="opciones"> <strong>Repayment</strong></label>
+                         </div>
+                        
+                         <div class="custom-radio form-check opcion w-100 ">
+                            <input type="radio" id="radio2" name="radio" value="2">
+                            <label for="radio2" class="opciones"><strong>Interest Only</strong></label>
+                          </div>
+                          <span class="aviso-radio aviso hidden">This filed is required</span>
+                </div>
+                <div class="boton">
+                    <button type="submit" id="submit" class="p-3 w-100 border-0">
+                        <img src="./images/icon-calculator.svg" class="calculadora" alt="">
+                        <strong>Calculate Repayments</strong>
+                    </button>
                 </div>
                 
-                <div class="linea"></div>
-                <div class="parrafo_modal p-2 p-sm-2 h-50 p-md-3 p-lg-4">
-                    Total you'll repay over the term
-                    <div class="total">
-                        $ 0
+            </form>
+            <div class=" imagen d-flex flex-column p-4 align-items-center justify-content-center" id="imagen">
+                <img src="./images/illustration-empty.svg" alt="">
+                <p class="titulo_imagen">Results shown here</p>
+                <p class="parrafo">Complete the form and click “calculate repayments” to see what 
+                    your monthly repayments would be.</p>
+            </div>
+            <div class="d-none imagen p-4 p-sm-5 " id="imagen_modal">
+                <p class="titulo_imagen">Your results</p>
+                <p class="parrafo_modal ">Your results are shown below based on the information you provided. 
+                    To adjust the results, edit the form and click “calculate repayments” again.</p>
+                <div class="resultado p-3 mt-sm-5 p-sm-4">
+                    <div class="parrafo_modal h-50 ">
+                        <span class="monthly-label">Your monthly repayments</span>
+                        <div class="monthly">
+                            $0
+                        </div>
                     </div>
-                </div>
-            </div>        
+                    
+                    <div class="linea"></div>
+                    <div class="parrafo_modal p-2 p-sm-2  ">
+                        <span class="total-label">Total you'll repay over the term</span>
+                        <div class="total">
+                            $0
+                        </div>
+                    </div>
+                </div>        
+            </div>
         </div>
+        
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

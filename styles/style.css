@@ -4,11 +4,19 @@
     padding: 0;
     
 }
+body{
+    background-color: hsl(199, 81%, 94%);
+}
  main{
+    background-color: hsl(199, 81%, 94%);
+    overflow-y: auto;
+ }
+ .contenido{
+    width: 850px;
+    height: 540px;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 500;
     font-size: 15px;
-    overflow-x: hidden;
  }
 .titulo{
     font-size: 16px;
@@ -79,6 +87,7 @@
     font-family: "Plus Jakarta Sans", sans-serif !important;
     background-color: hsl(202, 86%, 94%) !important;
 }
+
 .logo-red {
     background-color: hsl(4, 69%, 50%) !important;
     color: white !important;
@@ -86,7 +95,8 @@
 }
 .aviso{
     color: hsl(4, 69%, 50%);
-}                                                           
+}   
+                                                 
 .hidden{
     display: none;
 }
@@ -178,9 +188,19 @@
     font-size: 1.5rem;
 }
 
-@media(min-width: 576px){
+@media(min-width: 768px){
+    form{
+        height: 100%;
+        width: 50%;
+    }
+    .imagen{
+        height: 100%;
+        width: 50%;
+        
+    border-bottom-left-radius: 70px;
+    }
     .monthly{
-        font-size: 2rem;
+        font-size: 300%;
     }
     .titulo{
         font-size: 25px;
@@ -189,26 +209,8 @@
         width: 75% !important;
     }   
     .resultado{
-        height: 250px;
+        height: 60%;
+        width: 100%;
     }
     
-}
-@media(min-width:768px){
-    .monthly{
-        font-size: 3rem;
-    }
-    .total{
-        font-size: 2rem;
-    }
-}
-@media(min-width:992px){
-    .resultado{
-        height: 300px;
-    }
-    .monthly{
-        font-size: 3.5rem;
-    }
-    .total{
-        font-size: 2.5rem;
-    }
 }
