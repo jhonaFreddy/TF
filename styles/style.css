@@ -14,12 +14,10 @@ body{
  .contenido{
     width: 850px;
     height: 540px;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 500;
-    font-size: 15px;
  }
 .titulo{
-    font-size: 16px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 20px;
     font-weight: 700;
     color: hsl(202, 55%, 16%)
 }
@@ -197,13 +195,13 @@ body{
         height: 100%;
         width: 50%;
         
-    border-bottom-left-radius: 70px;
+        border-bottom-left-radius: 70px;
     }
     .monthly{
         font-size: 300%;
     }
     .titulo{
-        font-size: 25px;
+        font-size: 20px;
     }
     .boton>button{
         width: 75% !important;
